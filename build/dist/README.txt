@@ -1,0 +1,2 @@
+测试javafx的兼容性
+请分别使用java6、java7、java8运行0daybreaker.jar

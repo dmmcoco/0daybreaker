@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.ControllerAll">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false" text="采集">
+              <items>
+                <MenuItem fx:id="start" mnemonicParsing="false" text="开始" />
+                  <MenuItem mnemonicParsing="false" text="停止" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="列表">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="过滤器" />
+                  <MenuItem fx:id="export" mnemonicParsing="false" text="导出" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="帮助">
+            <items>
+              <MenuItem fx:id="about" mnemonicParsing="false" text="关于" />
+                  <MenuItem mnemonicParsing="false" text="作者" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

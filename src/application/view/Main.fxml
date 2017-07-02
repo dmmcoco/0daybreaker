@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.ControllerCollect">
+   <children>
+      <TabPane prefHeight="485.0" prefWidth="744.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="采集器">
+               <content>
+                  <AnchorPane prefHeight="442.0" prefWidth="744.0">
+                     <children>
+                        <TabPane layoutY="30.0" prefHeight="111.0" prefWidth="744.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="ZoomEye">
+                                 <content>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="15.0" text="表达式:" />
+                                          <TextField fx:id="zoomeye_text" layoutX="75.0" layoutY="10.0" prefHeight="27.0" prefWidth="224.0" />
+                                          <CheckBox fx:id="zoomeye" layoutX="14.0" layoutY="46.0" mnemonicParsing="false" selected="true" text="使用" />
+                                          <Label layoutX="317.0" layoutY="15.0" text="页数:从" />
+                                          <TextField fx:id="zoomeye_from" layoutX="366.0" layoutY="10.0" prefHeight="27.0" prefWidth="48.0" text="1" />
+                                          <Label layoutX="414.0" layoutY="15.0" text="到" />
+                                          <TextField fx:id="zoomeye_to" layoutX="427.0" layoutY="10.0" prefHeight="27.0" prefWidth="48.0" text="1" />
+                                          <CheckBox fx:id="zoom_web" layoutX="83.0" layoutY="46.0" mnemonicParsing="false" selected="true" text="查询Web服务" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Censys">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <CheckBox fx:id="shodan" layoutX="16.0" layoutY="39.0" mnemonicParsing="false" text="使用" />
+                                          <TextField fx:id="zoomeye_text1" layoutX="75.0" layoutY="6.0" prefHeight="27.0" prefWidth="365.0" />
+                                          <Label layoutX="16.0" layoutY="11.0" text="表达式:" />
+                                          <Label layoutX="450.0" layoutY="11.0" text="页数:从" />
+                                          <TextField fx:id="zoomeye_to1" layoutX="585.0" layoutY="6.0" prefHeight="27.0" prefWidth="48.0" text="1" />
+                                          <Label layoutX="561.0" layoutY="11.0" text="到" />
+                                          <TextField fx:id="zoomeye_from1" layoutX="500.0" layoutY="6.0" prefHeight="27.0" prefWidth="48.0" text="1" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Shodan">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
+                              <Tab text="Fofa">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                              <Tab text="傻蛋">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                 </content>
+                              </Tab>
+                            <Tab disable="true" text="搜索引擎">
+                                 <content>
+                                    <AnchorPane>
+                                       <children>
+                                          <CheckBox layoutX="199.0" layoutY="44.0" mnemonicParsing="false" text="360好搜" />
+                                          <TextField fx:id="common_engine" layoutX="81.0" layoutY="5.0" prefHeight="27.0" prefWidth="646.0" />
+                                          <Label layoutX="14.0" layoutY="10.0" text="搜索语句:" />
+                                          <CheckBox fx:id="sogou" layoutX="139.0" layoutY="44.0" mnemonicParsing="false" text="搜狗" />
+                                          <CheckBox fx:id="baidu" layoutX="17.0" layoutY="43.0" mnemonicParsing="false" text="百度" />
+                                          <CheckBox fx:id="bing" layoutX="81.0" layoutY="43.0" mnemonicParsing="false" text="必应" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                        <TableView fx:id="tv" layoutY="149.0" prefHeight="298.0" prefWidth="738.0">
+                          <columns>
+                            <TableColumn fx:id="id" prefWidth="45.0" text="ID" />
+                            <TableColumn fx:id="title" prefWidth="99.0" text="标题" />
+                              <TableColumn fx:id="engine" prefWidth="110.0" text="引擎" />
+                              <TableColumn fx:id="url" prefWidth="329.0" text="网址" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="startBtn" layoutX="5.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="开始" />
+                        <Button layoutX="69.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="停止" />
+                        <Button layoutX="133.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="过滤" />
+                        <Button layoutX="199.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="导出" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="批量getshell">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <TextArea fx:id="statusBar" layoutX="11.0" layoutY="493.0" prefHeight="71.0" prefWidth="725.0" />
+   </children>
+</AnchorPane>
