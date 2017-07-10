@@ -79,10 +79,17 @@ public class Collect_zoomeye implements Runnable{
 				break;
 			}
 			for(int i=0;i<base.length();i++){
-				String site=base.getJSONObject(i).getString("site");
-				//String site=base.getJSONObject(i).getJSONArray("webapp").getJSONObject(0).getString("url");
-				String title=base.getJSONObject(i).getString("title");
-				Collect_process.data.add(new Collect_item(Collect_process.nextId(), title, "ZoomEye", site));
+				if(if_web){
+					String site=base.getJSONObject(i).getString("site");
+					//String site=base.getJSONObject(i).getJSONArray("webapp").getJSONObject(0).getString("url");
+					String title=base.getJSONObject(i).getString("title");
+					Collect_process.data.add(new Collect_item(Collect_process.nextId(), title, "ZoomEye", site));
+				}else{
+					String ip=base.getJSONObject(i).getString("ip");
+					String title="";
+					Collect_process.data.add(new Collect_item(Collect_process.nextId(), title, "ZoomEye", ip));
+				}
+				
 			}
 			process.refreshTotal();
 			process.controllerMain.appendStatus("[*]ZoomEye引擎已采集页码 "+page);

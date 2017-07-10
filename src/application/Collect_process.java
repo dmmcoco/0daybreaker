@@ -18,7 +18,7 @@ public class Collect_process{
 		stopFlag=false;
 		this.controllerMain=controllerMain;
 		
-		data.add(new Collect_item(222, "xx", "ZoomEye", "www.ddhc.cn"));
+		//data.add(new Collect_item(222, "xx", "ZoomEye", "www.ddhc.cn"));
 		//System.out.println(super.common_engine.getText());
 		String common_keyword=controllerMain.common_engine.getText();
 		String zoomeye_keyword=controllerMain.zoomeye_text.getText();
