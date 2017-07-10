@@ -21,12 +21,12 @@
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                        <children>
                                           <Label layoutX="14.0" layoutY="15.0" text="表达式:" />
-                                          <TextField fx:id="zoomeye_text" layoutX="75.0" layoutY="10.0" prefHeight="27.0" prefWidth="224.0" />
+                                          <TextField fx:id="zoomeye_text" layoutX="75.0" layoutY="10.0" prefHeight="27.0" prefWidth="476.0" />
                                           <CheckBox fx:id="zoomeye" layoutX="14.0" layoutY="46.0" mnemonicParsing="false" selected="true" text="使用" />
-                                          <Label layoutX="317.0" layoutY="15.0" text="页数:从" />
-                                          <TextField fx:id="zoomeye_from" layoutX="366.0" layoutY="10.0" prefHeight="27.0" prefWidth="48.0" text="1" />
-                                          <Label layoutX="414.0" layoutY="15.0" text="到" />
-                                          <TextField fx:id="zoomeye_to" layoutX="427.0" layoutY="10.0" prefHeight="27.0" prefWidth="48.0" text="1" />
+                                          <Label layoutX="558.0" layoutY="15.0" text="页数:从" />
+                                          <TextField fx:id="zoomeye_from" layoutX="609.0" layoutY="10.0" prefHeight="27.0" prefWidth="48.0" text="1" />
+                                          <Label layoutX="657.0" layoutY="15.0" text="到" />
+                                          <TextField fx:id="zoomeye_to" layoutX="676.0" layoutY="10.0" prefHeight="27.0" prefWidth="48.0" text="1" />
                                           <CheckBox fx:id="zoom_web" layoutX="83.0" layoutY="46.0" mnemonicParsing="false" selected="true" text="查询Web服务" />
                                        </children>
                                     </AnchorPane>
@@ -87,9 +87,9 @@
                           </columns>
                         </TableView>
                         <Button fx:id="startBtn" layoutX="5.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="开始" />
-                        <Button layoutX="69.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="停止" />
-                        <Button layoutX="133.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="过滤" />
-                        <Button layoutX="199.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="导出" />
+                        <Button fx:id="endBtn" layoutX="69.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="停止" />
+                        <Button fx:id="removeRepeated" layoutX="133.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="去重" />
+                        <Button fx:id="export" layoutX="199.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="导出" />
                      </children>
                   </AnchorPane>
                </content>

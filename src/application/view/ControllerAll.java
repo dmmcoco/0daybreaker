@@ -21,7 +21,7 @@ public class ControllerAll {
 	@FXML
 	public MenuItem about;
 	public MenuItem manageAccount;
-	public MenuItem export;
+	//public MenuItem export;
 	public AnchorPane init(Stage primaryStage) throws Exception{
 		FXMLLoader loaderMain=new FXMLLoader();
 		loaderMain.setLocation(Main.class.getResource("view/Main.fxml"));
@@ -63,7 +63,8 @@ public class ControllerAll {
 				Collect_process process=new Collect_process(controllerMain);
 			}
 		});*/
-		export.setOnAction(new EventHandler<ActionEvent>() {
+		
+		/*export.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent event) {
@@ -80,7 +81,7 @@ public class ControllerAll {
 					e.printStackTrace();
 				}
 			}
-		});
+		});*/
 		//new Process(controllerMain);//////del
 		return main;
 	}

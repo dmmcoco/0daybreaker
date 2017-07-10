@@ -13,9 +13,12 @@ public class Collect_process{
 	public static int id=0;
 	public static ObservableList<Collect_item> data=FXCollections.observableArrayList();
 	public static Collect_accounts accounts=new Collect_accounts();
+	public static boolean stopFlag=false;
 	public Collect_process(ControllerCollect controllerMain) {
+		stopFlag=false;
 		this.controllerMain=controllerMain;
-
+		
+		data.add(new Collect_item(222, "xx", "ZoomEye", "www.ddhc.cn"));
 		//System.out.println(super.common_engine.getText());
 		String common_keyword=controllerMain.common_engine.getText();
 		String zoomeye_keyword=controllerMain.zoomeye_text.getText();
@@ -58,6 +61,9 @@ public class Collect_process{
 	/*public void setStatus(String word){
 		controllerMain.statusBar.setText(word);
 	}*/
+	public void stopAll(){
+		stopFlag=true;
+	}
 	public synchronized static int nextId(){
 		return ++id;
 	}

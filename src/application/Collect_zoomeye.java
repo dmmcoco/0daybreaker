@@ -34,7 +34,7 @@ public class Collect_zoomeye implements Runnable{
 			@Override
 			public void run() {
 				// TODO 自动生成的方法存根
-				process.controllerMain.appendStatus("[*]ZoomEye引擎停止工作，信息："+apiMessage);
+				process.controllerMain.appendStatus("[!]ZoomEye引擎停止工作，信息："+apiMessage);
 			}
 		});
 	}
@@ -79,13 +79,17 @@ public class Collect_zoomeye implements Runnable{
 				break;
 			}
 			for(int i=0;i<base.length();i++){
-				String site="http://"+base.getJSONObject(i).getString("site");
+				String site=base.getJSONObject(i).getString("site");
 				//String site=base.getJSONObject(i).getJSONArray("webapp").getJSONObject(0).getString("url");
 				String title=base.getJSONObject(i).getString("title");
 				Collect_process.data.add(new Collect_item(Collect_process.nextId(), title, "ZoomEye", site));
 			}
 			process.refreshTotal();
 			process.controllerMain.appendStatus("[*]ZoomEye引擎已采集页码 "+page);
+			if(Collect_process.stopFlag==true){
+				noticeExit("被用户手动终止");
+				return;
+			}
 		}
 		noticeExit(exitMessage);
 	}
