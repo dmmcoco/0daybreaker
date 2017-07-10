@@ -32,7 +32,7 @@
                                     </AnchorPane>
                                  </content>
                               </Tab>
-                              <Tab text="Censys">
+                              <Tab disable="true" text="Censys">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -47,17 +47,17 @@
                                     </AnchorPane>
                                  </content>
                               </Tab>
-                              <Tab text="Shodan">
+                              <Tab disable="true" text="Shodan">
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                 </content>
                               </Tab>
-                              <Tab text="Fofa">
+                              <Tab disable="true" text="Fofa">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                  </content>
                               </Tab>
-                              <Tab text="傻蛋">
+                              <Tab disable="true" text="傻蛋">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                  </content>
