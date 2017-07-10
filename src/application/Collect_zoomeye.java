@@ -49,14 +49,16 @@ public class Collect_zoomeye implements Runnable{
 			}
 		});
 		String exitMessage="已完成指定页数";
-		String source=Requests.post("https://api.zoomeye.org/user/login").body("{\"username\": \"daybreaker@yopmail.com\",\"password\": \"daybreaker2017\"}").send().readToText();
+		String source=Requests.post("https://api.zoomeye.org/user/login").body("{\"username\": \""+Collect_process.accounts.zoomeye_email+"\",\"password\": \""+Collect_process.accounts.zoomeye_password+"\"}").send().readToText();
 		JSONObject json=new JSONObject();
 		String access_token="";
 		try{
 			json=new JSONObject(source);
 			access_token=json.getString("access_token");
 		}catch(Exception e){
-			noticeExit("网络问题，请检查");
+			json=new JSONObject(source);
+			String msg=json.getString("message");
+			noticeExit("发生错误："+msg);
 			return;
 		}
 		Map<String, Object> headers = new HashMap<>();

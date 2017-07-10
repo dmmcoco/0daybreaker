@@ -11,10 +11,10 @@ import javafx.stage.Stage;
 public class AccountManager extends Stage{
 	public void init() throws Exception{
 		FXMLLoader loader=new FXMLLoader();
-		loader.setLocation(Main.class.getResource("view/AccountManager.fxml"));
+		loader.setLocation(AccountManager.class.getResource("view/AccountManager.fxml"));
 		AnchorPane am=(AnchorPane)loader.load();
 		ControllerAccountManager controller=loader.getController();
-		//controller.init();
+		controller.init(this);
 		this.setTitle("API账号管理");
 		this.setScene(new Scene(am));
 		this.show();

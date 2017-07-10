@@ -1,5 +1,6 @@
 package application;
 
+import application.model.Collect_accounts;
 import application.model.Collect_item;
 import application.view.ControllerCollect;
 import javafx.application.Platform;
@@ -11,12 +12,16 @@ public class Collect_process{
 	public ControllerCollect controllerMain;
 	public static int id=0;
 	public static ObservableList<Collect_item> data=FXCollections.observableArrayList();
+	public static Collect_accounts accounts=new Collect_accounts();
 	public Collect_process(ControllerCollect controllerMain) {
 		this.controllerMain=controllerMain;
 
 		//System.out.println(super.common_engine.getText());
 		String common_keyword=controllerMain.common_engine.getText();
 		String zoomeye_keyword=controllerMain.zoomeye_text.getText();
+		
+		accounts.readConfig();
+		
 		/*if(controllerMain.baidu.isSelected()){
 			Thread baidu=new Thread(new Baidu(common_keyword));
 			baidu.start();
